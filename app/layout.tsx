@@ -103,7 +103,7 @@ export default function RootLayout({
         <meta name="twitter:title" content="Lucky Bear Casino — официальный сайт" />
         <meta name="twitter:description" content="Лаки бир казино онлайн: слоты, рулетка, карты. Зеркало и бонусы." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
-        {/* End of custom head tags */}
+       <meta name="yandex-verification" content="2c6178a227c92b99" />
       </head>
       <body>
         {children}
